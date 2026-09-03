@@ -149,7 +149,7 @@ This page catalogs every diagram across the repository: `docs/`, `blog/`, `i18n/
 
 **Notes:**
 
-- Both mindmaps carry the title "HAMi VGPU mind map". The "VGPU" scope is narrower than HAMi's current support surface, which now covers Cambricon MLU, Hygon DCU, Kunlunxin XPU, MetaX GPU, Iluvatar Corex, and Ascend NPU in addition to NVIDIA VGPU.
+- Both mindmaps carry the title "HAMi VGPU mind map". The "VGPU" scope is narrower than HAMi's current support surface, which now covers Cambricon MLU, Hygon DCU, Kunlunxin XPU, MetaX GPU, Iluvatar Corex, and Huawei Ascend NPU in addition to NVIDIA VGPU.
 - Neither mindmap has an editable source file. Updating them requires a full redraw.
 - Full content accuracy cannot be assessed from this inventory without visual inspection of the PNG files. A maintainer familiar with current HAMi architecture must review before any decision to update or remove.
 - Tracked for redesign in issue [#414](https://github.com/Project-HAMi/website/issues/414).
@@ -262,8 +262,8 @@ Priority list for the redraw work in [#421](https://github.com/Project-HAMi/webs
 | Medium | `static/img/docs/common/developers/scheduling/node-scheduler-policy-demo.png` | PNG | No source |
 | Medium | `static/img/docs/common/developers/scheduling/gpu-scheduler-policy-demo.png` | PNG | No source |
 | Medium | `static/img/docs/common/developers/protocol/protocol-register.png` | PNG | No source; shared by EN and ZH |
-| Medium | `static/img/docs/common/developers/protocol/device-registration.png` | PNG | No source; retained by historical protocol snapshots |
 | Medium | `static/img/docs/common/developers/protocol/task-dispatch.png` | PNG | No source; historical EN/ZH and current ZH, current EN pending [#811](https://github.com/Project-HAMi/website/pull/811) |
+| Medium | `static/img/docs/common/developers/protocol/device-registration.png` | PNG | No source; retained by historical protocol snapshots |
 | Medium | `static/img/docs/en/dynamic-mig/hami-dynamic-mig-structure.png` | PNG | No source |
 | Medium | `static/img/docs/en/dynamic-mig/hami-dynamic-mig-procedure.png` | PNG | No source |
 | Low | `static/img/docs/common/userguide/metax-device/metax-gpu/metax-topology.jpg` | JPG | Device-specific, no source |

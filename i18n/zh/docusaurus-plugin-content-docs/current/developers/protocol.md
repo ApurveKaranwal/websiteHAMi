@@ -42,17 +42,17 @@ hami.io/node-handshake-{device-type}: Requesting_{scheduler_node_current_timesta
 
 ## 任务分发与调度决策
 
-在 `bind` 过程中，`kube-scheduler` 调用 device-plugin 挂载设备，但仅提供设备的 `UUID`。在 GPU 共享场景下，device-plugin 无法原生获取工作负载请求的设备规格（例如 GPU 显存和计算核心限制）。
+在 `bind` 过程中，`kube-scheduler` 将 Pod 绑定到节点。在容器创建期间，`kubelet` 调用 device-plugin 的 Allocate 方法并将其响应传递给容器运行时。在 GPU 共享场景下，device-plugin 无法原生获取工作负载请求的设备规格（例如 GPU 显存和计算核心限制）。
 
 因此，HAMi 使用一种协议让调度器将任务分配元数据传递给 device-plugin。调度器通过向 Pod 写入分配注解（Annotation）来传递这些信息，device-plugin 在容器启动时读取这些注解，如下图所示：
 
 <img src="/img/docs/common/developers/protocol/task-dispatch.png" width="600px" alt="HAMi 任务分发协议图，显示调度器与 device-plugin 的交互过程" />
 
-在此过程中，管理以下三个注解：
+在此过程中，主要涉及以下注解：
 
 - `hami.io/bind-time`：调度决策的时间戳。
 - `hami.io/vgpu-devices-allocated`：调度器分配的设备及其规格。
-- `hami.io/vgpu-devices-to-allocate`：待分配的设备。调度器创建 Pod 注解时，`hami.io/vgpu-devices-to-allocate` 包含目标设备。device-plugin 根据此注解确定分配方案，分配完成后移除已分配的设备。任务成功运行后，`hami.io/vgpu-devices-to-allocate` 变为空。
+- `hami.io/vgpu-devices-to-allocate`：待分配的设备。调度器创建 Pod 注解时，`hami.io/vgpu-devices-to-allocate` 包含目标设备。device-plugin 根据此注解确定分配方案，分配完成后移除已分配的设备。任务成功运行后，`hami.io/vgpu-devices-to-allocate` 序列化为 `;`（表示空列表），而不是空字符串或省略该注解。
 
 以下是一个请求 3000 MiB 设备显存的 GPU 任务在 Pod 上生成的注解示例：
 

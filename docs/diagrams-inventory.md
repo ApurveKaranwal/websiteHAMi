@@ -262,8 +262,8 @@ Priority list for the redraw work in [#421](https://github.com/Project-HAMi/webs
 | Medium | `static/img/docs/common/developers/scheduling/node-scheduler-policy-demo.png` | PNG | No source |
 | Medium | `static/img/docs/common/developers/scheduling/gpu-scheduler-policy-demo.png` | PNG | No source |
 | Medium | `static/img/docs/common/developers/protocol/protocol-register.png` | PNG | No source; shared by EN and ZH |
-| Medium | `static/img/docs/common/developers/protocol/device-registration.png` | PNG | No source; retained by historical protocol snapshots |
 | Medium | `static/img/docs/common/developers/protocol/task-dispatch.png` | PNG | No source; historical EN/ZH and current ZH, current EN pending [#811](https://github.com/Project-HAMi/website/pull/811) |
+| Medium | `static/img/docs/common/developers/protocol/device-registration.png` | PNG | No source; retained by historical protocol snapshots |
 | Medium | `static/img/docs/en/dynamic-mig/hami-dynamic-mig-structure.png` | PNG | No source |
 | Medium | `static/img/docs/en/dynamic-mig/hami-dynamic-mig-procedure.png` | PNG | No source |
 | Low | `static/img/docs/common/userguide/metax-device/metax-gpu/metax-topology.jpg` | JPG | Device-specific, no source |
